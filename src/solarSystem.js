@@ -354,11 +354,11 @@ const solSystem = new solarSystem();
 
 function initSolarSystem()
 {
-    const sun = new star('Sun', SUN_RADIUS, new THREE.MeshBasicMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/mercury.jpg')}), SUN_PERIOD);
+    const sun = new star('Sun', SUN_RADIUS, new THREE.MeshBasicMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/stars/sun.jpg')}), SUN_PERIOD);
     const mercury = new planet('Mercury', MERCURY_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/mercury.jpg')}), MERCURY_MAJOR_AXIS, MERCURY_MINOR_AXIS, MERCURY_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/mercury.jpg')}), MERCURY_MAJOR_AXIS, MERCURY_MINOR_AXIS, MERCURY_PERIOD);
     const venus = new planet('Venus', VENUS_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/venus.jpg')}), VENUS_MAJOR_AXIS, VENUS_MINOR_AXIS, VENUS_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/venus.jpg')}), VENUS_MAJOR_AXIS, VENUS_MINOR_AXIS, VENUS_PERIOD);
     const earth = new planet('Earth', EARTH_RADIUS, 
             new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/earth.jpg'),
             emissiveMap: textureLoader.load('../textures/planets/earthNight.jpg'), emissive: new THREE.Color(0.3, 0.3, 0.3), emissiveIntensity: 0.3}),
