@@ -361,7 +361,7 @@ function initSolarSystem()
             new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/venus.jpg')}), VENUS_MAJOR_AXIS, VENUS_MINOR_AXIS, VENUS_PERIOD);
     const earth = new planet('Earth', EARTH_RADIUS, 
             new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/earth.jpg'),
-            emissiveMap: textureLoader.load('../textures/planets/earthNight.jpg'), emissive: new THREE.Color(0.3, 0.3, 0.3), emissiveIntensity: 0.3}),
+            emissiveMap: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/earthNight.jpg'), emissive: new THREE.Color(0.3, 0.3, 0.3), emissiveIntensity: 0.3}),
             EARTH_MAJOR_AXIS, EARTH_MINOR_AXIS, EARTH_PERIOD);
     const mars = new planet('Mars', MARS_RADIUS, 
             new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/mars.jpg')}), MARS_MAJOR_AXIS, MARS_MINOR_AXIS, MARS_PERIOD);
