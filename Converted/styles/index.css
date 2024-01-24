@@ -1,0 +1,135 @@
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('../fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: Titillium_Web;
+    src: url('../fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: SpaceGrotesk, Arial;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+
+#viewport {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    background-color: rgb(43, 43, 43);
+    user-select: none;
+    z-index: 1;
+}
+
+#current-planet {
+    margin-top: 4px;
+    font-size: 33px;
+}
+
+#short-description {
+    font-size: 25px;
+}
+
+.navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-50%);
+    align-items: center;
+    z-index: 1;
+}
+
+a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 1;
+    user-select: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.navigation-button {
+    font-size: 48px;
+    margin-left: 31px;
+    margin-right: 31px;
+    background-color: transparent;
+    border: 6px solid rgb(117, 117, 117);
+    border-radius: 100%;
+    width: 68px;
+    height: 68px;
+    user-select: none;
+}
+
+.location-label {
+    font-family: Titillium_Web, Arial;
+    transition: opacity 0.8s;
+    text-align: center;
+    z-index: -1;
+}
+
+#toggle-description-button {
+    position: absolute;
+    top: 22%;
+    margin-left: 5px;
+    color: white;
+    background: rgb(88, 88, 88);
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 4px;
+    border: none;
+    font-size: 24px;
+    z-index: 1;
+}
+
+#long-description {
+    top: 27%;
+    left: -100%;
+    margin-left: 5px;
+    padding: 4px;
+    position: fixed;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 700px;
+    width: 90%;
+    height: 55%;
+    background-color: rgb(34, 34, 34);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+#description-title {
+    font-size: 50px;
+    margin-left: 15px;
+}
+
+#description-section-1, #description-section-2 {
+    margin-top: 24px;
+    font-size: 24px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 12px;
+    padding: 4px;
+}

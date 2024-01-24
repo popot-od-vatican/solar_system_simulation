@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/simulation.css">
+    <link rel="stylesheet" href="./styles/side-menu.css">
+    <link rel="stylesheet" href="./styles/scrollbar.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+          }
+        }
+      </script>
+    <title>Solar System</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="header">
+      <button class="change-planet-icon" id="previous-planet-button">
+        &#60;
+      </button>
+      <div id="selected-planet-label">
+        Earth
+      </div>
+      <button class="change-planet-icon" id="next-planet-button">
+        &#62;
+      </button>
+    </div>
+
+    <img id="settings-icon" src="./icons/Menu/2x/outline_menu_white_24dp.png" onclick="toggleSettings()">
+    <div id="side-menu">
+      <div class="section">
+        <div class="section-header">
+          Asteroids
+        </div>
+        <div class="section-content">
+          <div class="section-line">
+            <div class="section-segment">
+              <div class="section-input-label">
+                Visible
+              </div>
+              <input type="checkbox" name="asteroidsVisibility" id="asteroidsVisibility" checked>
+            </div>
+            <div class="section-segment">
+              <div class="section-input-label">Orbit</div>
+              <input type="checkbox" name="asteroidsOrbit" id="asteroidsOrbit" checked>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header">
+          Orbits
+        </div>
+        <div class="section-content">
+          <div class="section-line">
+            <div class="section-segment">
+              <div class="section-input-label">
+                Visible
+              </div>
+              <input type="checkbox" name="orbitsVisibility" id="orbitsVisibility" checked>
+            </div>
+          </div>
+          <div class="section-line" style="justify-content: space-between;">
+            <div class="section-segment">
+              Orbit Lines <input type="radio" name="typeOrbit" id="orbitLines" checked>
+            </div>
+            <div class="section-segment">
+              Orbit Traces <input type="radio" name="typeOrbit" id="orbitTraces">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header">
+          Planets
+        </div>
+        <div class="section-content">
+          <div class="section-line">
+            <div class="section-segment">
+              <div class="section-input-label">
+                Labels
+              </div>
+              <input type="checkbox" name="planetsLabelVisibility" id="planetsVisibleLabelsInput" checked>
+            </div>
+            <div class="section-segment">
+              <div class="section-input-label">
+                Static
+              </div>
+              <input type="checkbox" name="planetsStatic" id="planetsStaticInput">
+            </div>
+          </div>
+          <div class="section-line">
+            Scale
+            <input type="range" min="1" max="4" class="slider" id="planets-scale" step="0.1" value="1">
+            <span id="planets-scale-display">1</span>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header">
+          Satellites
+        </div>
+        <div class="section-content">
+          <div class="section-line">
+            <div class="section-segment">
+              <div class="section-input-label">
+                Labels
+              </div>
+              <input type="checkbox" name="satelliteLabelsVisibility" id="satellitesLabelVisibility" checked>
+            </div>
+            <div class="section-segment">
+              <div class="section-input-label">
+                Static
+              </div>
+              <input type="checkbox" name="satellitesStatic" id="satellitesStatic">
+            </div>
+          </div>
+          <div class="section-line">
+            Scale
+            <input type="range" min="1" max="8" class="slider" id="satellites-scale" step="0.1" value="1.0" onchange="updateSatellitesScale()">
+            <span id="satellites-scale-display">1</span>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-header">Stars</div>
+        <div class="section-content">
+          <div class="section-line">
+            <div class="section-segment">
+              <div class="section-input-label">
+                Visible
+              </div>
+              <input type="checkbox" name="starsVisibility" id="starsVisibility" checked>
+            </div>
+            <div class="section-segment">
+              <div class="section-input-label">
+                Labels
+              </div>
+              <input type="checkbox" name="starsLabelsVisibility" id="starsLabelsVisibility" checked>
+            </div>
+            <div class="section-segment">
+              <div class="section-input-label">
+                Static
+              </div>
+              <input type="checkbox" name="starsStatic" id="starsStatic">
+            </div>
+          </div>
+          <div class="section-line">
+            Scale
+            <input type="range" min="1" max="2.5" class="slider" id="stars-scale" step="0.1" value="1" onchange="updateStarsScale()">
+            <span id="stars-scale-display">1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="time-container">
+        <div id="speed-container">
+          <div id="speed-menu">
+            <input type="number" id="speed-input" min="1" oninput="changeSimulationSpeed()" value="1">
+          </div>
+        </div>
+        <div id="play-pause-container" onclick="playStop()">
+          <img src="./icons/Play/1x/baseline_play_arrow_white_36dp.png" id="play-pause-icon">
+          <div id="play-pause-label">
+            Play
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="viewport"></canvas>
+    <script src="./src/sideMenuHandlers.js"></script>
+    <script>
+
+      const sideMenu = document.getElementById('side-menu');
+      let sideMenuVisibility = false;
+
+      const playPauseIcon = document.getElementById('play-pause-icon');
+      const playPauseLabel = document.getElementById('play-pause-label');
+      const speedInput = document.getElementById('speed-input');
+      let simulationSpeed = 1;
+      let isSimulating = false;
+
+    </script>
+    <script type="module" src="./src/simulation.js"></script>
+    <script>
+
+      function toggleSettings()
+      {
+        sideMenuVisibility = !sideMenuVisibility;
+
+        if(sideMenuVisibility)
+        {
+          sideMenu.style.right = "0%";
+          sideMenu.style.border = "1px solid grey";
+          sideMenu.style.borderRadius = "8px";
+        }
+        else
+        {
+          sideMenu.style.right = "-365px";
+          sideMenu.style.border = "none";
+        }
+      }
+
+      function playStop()
+      {
+        isSimulating = !isSimulating;
+
+        if(isSimulating)
+        {
+          playPauseLabel.innerHTML = "Pause";
+          playPauseIcon.src = './icons/Pause/1x/baseline_pause_white_36dp.png';
+        }
+        else
+        {
+          playPauseLabel.innerHTML = "Play";
+          playPauseIcon.src = "./icons/Play/1x/baseline_play_arrow_white_36dp.png";
+        }
+      }
+
+      function changeSimulationSpeed()
+      {
+        simulationSpeed = speedInput.value;
+      }
+
+    </script>
+  </body>
+</html>
