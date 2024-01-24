@@ -360,30 +360,30 @@ function initSolarSystem()
     const venus = new planet('Venus', VENUS_RADIUS, 
             new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/venus.jpg')}), VENUS_MAJOR_AXIS, VENUS_MINOR_AXIS, VENUS_PERIOD);
     const earth = new planet('Earth', EARTH_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/earth.jpg'),
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/earth.jpg'),
             emissiveMap: textureLoader.load('../textures/planets/earthNight.jpg'), emissive: new THREE.Color(0.3, 0.3, 0.3), emissiveIntensity: 0.3}),
             EARTH_MAJOR_AXIS, EARTH_MINOR_AXIS, EARTH_PERIOD);
     const mars = new planet('Mars', MARS_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/mars.jpg')}), MARS_MAJOR_AXIS, MARS_MINOR_AXIS, MARS_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/mars.jpg')}), MARS_MAJOR_AXIS, MARS_MINOR_AXIS, MARS_PERIOD);
     const jupiter = new planet('Jupiter', JUPITER_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/jupiter.jpg')}), JUPITER_MAJOR_AXIS, JUPITER_MINOR_AXIS, JUPITER_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/jupiter.jpg')}), JUPITER_MAJOR_AXIS, JUPITER_MINOR_AXIS, JUPITER_PERIOD);
     const saturn = new planet('Saturn', SATURN_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/saturn.jpg')}), SATURN_MAJOR_AXIS, SATURN_MINOR_AXIS, SATURN_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/saturn.jpg')}), SATURN_MAJOR_AXIS, SATURN_MINOR_AXIS, SATURN_PERIOD);
     const uranus = new planet('Uranus', URANUS_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/uranus.jpg')}), URANUS_MAJOR_AXIS, URANUS_MINOR_AXIS, URANUS_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/uranus.jpg')}), URANUS_MAJOR_AXIS, URANUS_MINOR_AXIS, URANUS_PERIOD);
     const neptune = new planet('Neptune', NEPTUNE_RADIUS, 
-            new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/planets/neptune.jpg')}), NEPTUNE_MAJOR_AXIS, NEPTUNE_MINOR_AXIS, NEPTUNE_PERIOD);
+            new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/planets/neptune.jpg')}), NEPTUNE_MAJOR_AXIS, NEPTUNE_MINOR_AXIS, NEPTUNE_PERIOD);
     
-    const moon = new satellite("Moon", MOON_RADIUS, new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/satellites/moon.jpg')}),
+    const moon = new satellite("Moon", MOON_RADIUS, new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/satellites/moon.jpg')}),
         MOON_MAJOR_AXIS, MOON_MINOR_AXIS, MOON_PERIOD);
     const titan = new satellite("Titan", TITAN_RADIUS, new THREE.MeshStandardMaterial({color: "#dc8407"}),
         TITAN_MAJOR_AXIS, TITAN_MINOR_AXIS, TITAN_PERIOD);
-    const ganymede = new satellite("Ganymede", GANYMEDE_RADIUS, new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/satellites/ganymede.jpg')}),
+    const ganymede = new satellite("Ganymede", GANYMEDE_RADIUS, new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/satellites/ganymede.jpg')}),
         GANYMEDE_MAJOR_AXIS, GANYMEDE_MINOR_AXIS, GANYMEDE_PERIOD);
-    const europa = new satellite("Europa", EUROPA_RADIUS, new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/satellites/europa.jpg')}),
+    const europa = new satellite("Europa", EUROPA_RADIUS, new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/satellites/europa.jpg')}),
         EUROPA_MAJOR_AXIS, EUROPA_MINOR_AXIS, EUROPA_PERIOD);
 
-    const earthClouds = new THREE.MeshStandardMaterial({map: textureLoader.load('../textures/clouds/earthClouds.png'), transparent: true})
+    const earthClouds = new THREE.MeshStandardMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/clouds/earthClouds.png'), transparent: true})
     earth.addClouds(earthClouds);
     
     earth.addLocation(41.9981, 21.4254, 'Skopje', 0.06, 'red', 'yellow');
@@ -409,13 +409,13 @@ function initSolarSystem()
 
     mars.addLocation(24.321, 52.1045, 'Colony Alpha', 0.04, 'red', 'blue');
 
-    saturn.addRing(new THREE.MeshBasicMaterial({map: textureLoader.load('../textures/rings/saturnRing.png'), side: THREE.DoubleSide, transparent: true}),
+    saturn.addRing(new THREE.MeshBasicMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/rings/saturnRing.png'), side: THREE.DoubleSide, transparent: true}),
         50, 160, 5, 0.0, 0.1);
     
-    uranus.addRing(new THREE.MeshBasicMaterial({map: textureLoader.load('../textures/rings/uranusRing.png'), side: THREE.DoubleSide, transparent: true}),
+    uranus.addRing(new THREE.MeshBasicMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/rings/uranusRing.png'), side: THREE.DoubleSide, transparent: true}),
         55, 60, 4.5, 0.5, 0.1);
 
-    neptune.addRing(new THREE.MeshBasicMaterial({map: textureLoader.load('../textures/rings/uranusRing.png'), side: THREE.DoubleSide, transparent: true}),
+    neptune.addRing(new THREE.MeshBasicMaterial({map: textureLoader.load('https://popot-od-vatican.github.io/solar_system_simulation/textures/rings/uranusRing.png'), side: THREE.DoubleSide, transparent: true}),
         34, 65, 5.1, 0.3, 0.1);
 
     mercury.setShortDescription(descriptions.mercury.short);
