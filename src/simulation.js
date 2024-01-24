@@ -385,10 +385,10 @@ class SolarSystemViewer {
       asteroidMesh.setMinorAxis(radius);
 
       if(Math.random() <= 0.5) {
-        await asteroidMesh.loadModel('../models/asteroids/asteroid_1.glb', this.scene);
+        await asteroidMesh.loadModel('https://popot-od-vatican.github.io/solar_system_simulation/models/asteroids/asteroid_1.glb', this.scene);
       }
       else {
-        await asteroidMesh.loadModel('../models/asteroids/asteroid_2.glb', this.scene);
+        await asteroidMesh.loadModel('https://popot-od-vatican.github.io/solar_system_simulation/models/asteroids/asteroid_2.glb', this.scene);
       }
 
       asteroidMesh.object.children[0].name = 'Asteroid';
@@ -523,7 +523,7 @@ class SolarSystemViewer {
 
 const world = new SolarSystemViewer(canvas);
 world.setSolarSystem(solSystem);
-world.setBackground('../textures/background/stars.hdr');
+world.setBackground('https://popot-od-vatican.github.io/solar_system_simulation/textures/background/stars.hdr');
 world.setAsteroids(0, 0, 0, 1000, 70);
 world.setAsteroids(0, 0, 0, 300, 40);
 world.setAsteroids(0, 0, 0, 2000, 50);
