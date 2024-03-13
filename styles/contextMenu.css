@@ -1,0 +1,33 @@
+
+@font-face {
+    font-family: Titillium_Web;
+    src: url('../fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+}
+
+#context-menu-container {
+    position: fixed;
+    z-index: 10;
+    margin: 0;
+    background-color: #1b1b1b;
+    width: 200px;
+    visibility: hidden;
+}
+
+.context-menu-item {
+    display: block;
+    margin: 0;
+    padding: 8px 10px 8px 10px;
+    user-select: none;
+    cursor: pointer;
+    font-family: Titillium_Web;
+    font-size: 17px;
+    color: #eee;
+}
+
+.context-menu-item:hover {
+    background-color: rgb(243, 3, 3);
+}
+
+#context-menu-close-item {
+    border-top:  1px solid rgb(252, 252, 252);
+}
