@@ -669,7 +669,7 @@ await world.load3DModels();
 world.ship.makeModelLit();
 world.ship.setNameToChildren();
 world.setTypeOfOrbit();
-world.setBackground('../textures/background/stars.hdr');
+world.setBackground('./textures/background/stars.hdr');
 world.addAsteroids(0, 0, 0, 370, 380, 40);
 world.addAsteroids(0, 0, 0, 660, 690, 40);
 world.addAsteroids(0, 0, 0, 1000, 970, 70);

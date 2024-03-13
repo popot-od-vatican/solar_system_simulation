@@ -9,7 +9,7 @@ export default class star extends celestialBody {
         this.radius = radius;
         this.planets = [];
 
-        this.setLabelPosition(0, 3.8 * this.radius, 0);
+        this.setLabelPosition(0, 1.8 * this.radius, 0);
         this.setLabelFontSize(26);
         this.setShouldRotate(true);
     }
