@@ -4,10 +4,10 @@ import satellite from './satellites.js';
 import star from './star.js';
 import descriptions from './descriptions.js';
 
-const orbitScale = 50;
+const orbitScale = 10;
 const satelliteOrbitScale = 5;
-const planetScale = 1000;
-const starScale = 3000;
+const planetScale = 950;
+const starScale = 950;
 const toKilometers = 2500;
 const textureLoader = new THREE.TextureLoader();
 

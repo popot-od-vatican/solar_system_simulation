@@ -15,6 +15,6 @@ export default class satellite extends celestialBody{
 
     updateLabel(camera)
     {
-        super.updateLabel(camera, 800, 11.0);
+        super.updateLabel(camera, 2095, 11.0);
     }
 }

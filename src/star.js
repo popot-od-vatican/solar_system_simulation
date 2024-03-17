@@ -26,7 +26,7 @@ export default class star extends celestialBody {
 
     updateLabel(camera)
     {
-        super.updateLabel(camera, 40000, 200.0);
+        super.updateLabel(camera, 90000, 100.0);
     }
 
     updateOrbitingPlanets(delta, simulationSpeed)

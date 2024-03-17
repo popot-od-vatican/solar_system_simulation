@@ -531,7 +531,7 @@ class SolarSystemViewer {
       }
 
       asteroidMesh.model.name = 'Asteroid';
-      asteroidMesh.model.scale.set(5, 5, 5);
+      asteroidMesh.model.scale.set(5 + Math.floor(Math.random() * 15), 5 + Math.floor(Math.random() * 15), 5 + Math.floor(Math.random() * 15));
       asteroidMesh.model.position.set(x_pos, centery, z_pos);
 
       group.add(asteroidMesh.model);
@@ -670,10 +670,13 @@ world.ship.makeModelLit();
 world.ship.setNameToChildren();
 world.setTypeOfOrbit();
 world.setBackground('./textures/background/stars.hdr');
-world.addAsteroids(0, 0, 0, 370, 380, 40);
-world.addAsteroids(0, 0, 0, 660, 690, 40);
-world.addAsteroids(0, 0, 0, 1000, 970, 70);
-world.addAsteroids(0, 0, 0, 1500, 1550, 50);
-world.addAsteroids(0, 0, 0, 2100, 1900, 50);
+world.addAsteroids(0, 0, 0, 1810, 1840, 30);
+world.addAsteroids(0, 51, 0, 1970, 1990, 35);
+world.addAsteroids(0, -25, 0, 1945, 1965, 40);
+world.addAsteroids(0, 10, 0, 2100, 2095, 25);
+world.addAsteroids(0, -40, 0, 2150, 2100, 15);
+world.addAsteroids(0, 0, 0, 3500, 3595, 20);
+world.addAsteroids(0, -25, 0, 5250, 5395, 15);
+world.addAsteroids(0, 45, 0, 6575, 6715, 10);
 world.startSimulating();
 world.run();

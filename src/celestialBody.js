@@ -36,9 +36,9 @@ export default class celestialBody
         this.rotationZSpeed = 0;
         this.timeElapsed = 0;
         this.orbitLine = null;
-        this.orbitPointsCount = 512;
+        this.orbitPointsCount = 1024;
         this.trace = null;
-        this.tracePointsCount = 60;
+        this.tracePointsCount = 75;
         this.model = null;
         this.fixed = false;
         this.hidden = false;
@@ -458,7 +458,7 @@ export default class celestialBody
         }
     }
 
-    updateLabel(camera, maxDistance = 10000.0, minDistance = 15.0)
+    updateLabel(camera, maxDistance = 50000.0, minDistance = 20.0)
     {
         const vec3 = new THREE.Vector3();
         this.objectSystem.getWorldPosition(vec3);

@@ -206,7 +206,7 @@ export default class planet extends celestialBody
             const vec3 = new THREE.Vector3();
             this.locations[i].pointMesh.getWorldPosition(vec3);
 
-            if(count > 0 || camera.position.distanceTo(vec3) >= 20.0) {
+            if(count > 0 || camera.position.distanceTo(vec3) >= 25.0) {
                 this.locations[i].label.element.style.opacity = "0";
             }
             else {
